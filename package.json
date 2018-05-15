@@ -1,0 +1,17 @@
+{
+  "name": "smart-semaphore",
+  "version": "0.0.0",
+  "description": "Algoritm for smart semaphore",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/main.js"
+  },
+  "author": "Diogo Domene",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
+    "typescript": "^2.8.3"
+  }
+}
