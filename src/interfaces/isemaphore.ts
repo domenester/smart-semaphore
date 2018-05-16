@@ -6,23 +6,17 @@ export interface ISemaphore {
 
   traficAmount: number
 
-  traficFlow: TGeoDirection
+  isOpen: boolean
 
-  status: TSemaphoreStatus
+  priority: TSemaphorePriority
 
-  semaphoresNear?: Array<ISemaphoreNear>
+  flowsTo?: Array<ISemaphore>
 
-  warnLimit: () => number
+  flowedFrom?: Array<ISemaphore>
 
-  setStatus: (status: TSemaphoreStatus) => void
+  requestOpening: (tos: Array<ISemaphore>) => void
 
+  allowOpening: (priority: TSemaphorePriority) => boolean
 }
 
-export interface ISemaphoreNear {
-  semaphore: ISemaphore
-  geoDirection: TGeoDirection
-}
-
-export type TGeoDirection = 'north' | 'south' | 'east' | 'west'
-
-export type TSemaphoreStatus = 'red' | 'yellow' | 'green'
+export type TSemaphorePriority = 1 | 2 | 3
